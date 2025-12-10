@@ -25,10 +25,7 @@ author:
   avatar           : "profile.png"
   name             : "DU Panwei"
   pronouns         : # example: "she/her"  
-  bio              : >
-  Research Fellow in Civil Engineering at Nanyang Technological University, Singapore.
-  My work focuses on AI4Science, including neural operators for fire and blast,
-  physics–AI surrogate modelling, and sustainable concrete materials.
+  bio              : "Research Fellow in Civil Engineering at Nanyang Technological University (NTU), working on AI4Science for structural fire and blast, and sustainable concrete."
   location         : "Singapore"
   employer         : "Nanyang Technological University (NTU)"
   uri              : # URL
