@@ -9,14 +9,13 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # Currently available options are "default", "air"
-title                    : "Your Name / Site Title"
+title                    : "Panwei Du"
 title_separator          : "-"
-name                     : &name "Your Name"
-description              : &description "Your Name's academic portfolio"   # Update this with a general description of your site, this is the default if not overridden by a page
-url                      : https://academicpages.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
-                                                           # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
-baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "academicpages/academicpages.github.io"
+name                     : &name "Panwei Du"
+description              : &description "AI4Science and structural/protective engineering: neural operators for fire and blast, sustainable concrete materials, and structural behaviour in fire."   # Update this with a general description of your site, this is the default if not overridden by a page
+url                      : "https://pwdu.github.io" 
+baseurl                  : "/panwei-du.github.io"
+repository               : "pwdu/panwei-du.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
@@ -24,13 +23,16 @@ repository               : "academicpages/academicpages.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Your Sidebar Name"
+  name             : "DU Panwei"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
+  bio              : >
+  Research Fellow in Civil Engineering at Nanyang Technological University, Singapore.
+    My work focuses on AI4Science, including neural operators for structural response under
+    fire and blast, hybrid physics–AI surrogate modelling, and sustainable concrete materials.  # :contentReference[oaicite:0]{index=0}
+  location         : "Singapore"
+  employer         : "Nanyang Technological University (NTU)"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "pwdu@ntu.edu.sg" 
 
   # Academic websites
   academia         : # URL
