@@ -27,8 +27,8 @@ author:
   pronouns         : # example: "she/her"  
   bio              : >
   Research Fellow in Civil Engineering at Nanyang Technological University, Singapore.
-    My work focuses on AI4Science, including neural operators for structural response under
-    fire and blast, hybrid physics–AI surrogate modelling, and sustainable concrete materials.  # :contentReference[oaicite:0]{index=0}
+  My work focuses on AI4Science, including neural operators for fire and blast,
+  physics–AI surrogate modelling, and sustainable concrete materials.
   location         : "Singapore"
   employer         : "Nanyang Technological University (NTU)"
   uri              : # URL
