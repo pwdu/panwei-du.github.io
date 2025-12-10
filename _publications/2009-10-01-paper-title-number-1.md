@@ -2,7 +2,7 @@
 title: "Simplified method for analysis of circular steel tubed-reinforced-concrete columns under eccentric compression"
 collection: publications
 category: manuscripts
-permalink: /publication/2019-11-01-ES-Paper_1-TRC analytical model
+permalink: /publication/2019-trc-columns/
 excerpt: 'A unified analytical framework for circular TSRC columns, enabling fast generation of N-M curves and eliminating the need to distinguish short vs slender columns — practical for design and stability evaluation.'
 date: 2019-11-01
 venue: 'Engineering Structures'
