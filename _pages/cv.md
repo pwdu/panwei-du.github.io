@@ -9,56 +9,44 @@ redirect_from:
 
 {% include base_path %}
 
-Education
+Current Position
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
 
-Work experience
+* Research Fellow, School of Civil and Environmental Engineering, Nanyang Technological University, Singapore
+
+Publication Summary
 ======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* 15 peer-reviewed journal papers
+* 3 preprints / under-review manuscripts
+* 1 conference proceeding listed in the website publication collection
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
+Research Areas
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+
+* AI4Science and neural operators for structural engineering
+* Structural fire engineering and heat transfer in concrete structures
+* Protective engineering, blast, impact, and sequential hazards
+* Sustainable, fibre-reinforced, lightweight, and ultra-high-performance concrete
+* Analytical, numerical, and experimental modelling of structural behaviour
+
+Selected Skills
+======
+
+* Scientific machine learning: neural operators, transfer learning, surrogate modelling
+* Computational mechanics: finite-element modelling, thermal analysis, structural response simulation
+* Experimental structural engineering: ambient and elevated-temperature testing
+* Programming and data analysis: Python, PyTorch-based modelling workflows, scientific computing
 
 Publications
 ======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
+
+<ul>{% for post in site.publications reversed %}
+  {% include archive-single-cv.html %}
+{% endfor %}</ul>
+
+Professional Profiles
 ======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+
+* [Google Scholar](https://scholar.google.com/citations?user=tJcaQK4AAAAJ&hl=en)
+* [ORCID](https://orcid.org/0000-0003-3838-2705)
