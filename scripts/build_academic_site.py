@@ -6,6 +6,7 @@ is deliberately not required or copied into this repository.
 """
 from pathlib import Path
 import html
+import hashlib
 import json
 import re
 from urllib.parse import quote
@@ -35,6 +36,9 @@ page_info = {
     'contact': ('Contact', 'Contact | Panwei Du', 'Contact Panwei Du at Nanyang Technological University for research collaboration and academic enquiries.'),
 }
 layout = read_content('layout')
+asset_versions = {name: hashlib.sha256((DOCS / 'assets' / name).read_bytes()).hexdigest()[:12] for name in ['style.css', 'site.js']}
+for name, version in asset_versions.items():
+    layout = layout.replace('assets/' + name + '"', 'assets/' + name + '?v=' + version + '"')
 profiles = read_content('profile-links')
 base_url = 'https://pwdu.github.io/panwei-du.github.io/'
 for page, (label, title, description) in page_info.items():
@@ -93,6 +97,8 @@ cv += '<h2>Peer-reviewed journal papers</h2><p>16 journal papers listed in the s
 cv += '<h2>Manuscripts in progress</h2>' + manuscripts
 cv += '<h2>Teaching, mentoring and academic service</h2>' + teaching
 cv += '''<h2>Awards and recognition</h2><ul><li>Dean’s List with Academic Excellence Award, AY2012–13, AY2013–14 and AY2015–16.</li><li>IStructE Gold Medal cum Book Prize, AY2015–16.</li><li>Continental Steel Book Prize, AY2015–16.</li><li>Singapore Concrete Institute Book Prize, AY2015–16.</li></ul><h2>Computational and AI skills</h2><p>PyTorch, TensorFlow, Scikit-learn; physics-informed neural networks, neural operators and graph neural networks; Python, NumPy, SciPy, Pandas, HDF5 and Matplotlib; Abaqus and MATLAB.</p><p class="small muted">This public CV is adapted from the August 2026 source CV. Personal telephone numbers and referee contact details are omitted.</p></main></body></html>'''
+for name, version in asset_versions.items():
+    cv = cv.replace('assets/' + name + '"', 'assets/' + name + '?v=' + version + '"')
 (DOCS / 'cv.html').write_text(cv, encoding='utf-8')
 
 # Retain common links from the former Academic Pages site.
