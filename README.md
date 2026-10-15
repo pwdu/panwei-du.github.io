@@ -2,7 +2,7 @@
 
 Live website: [pwdu.github.io/panwei-du.github.io](https://pwdu.github.io/panwei-du.github.io/)
 
-The current website is a responsive static site in **`docs/`**, based on the August 2026 CV. GitHub Pages publishes **`master` → `/docs`**. It includes research, 16 journal articles with search and filters, a public printable CV, experience, teaching and contact details.
+The current website is a responsive static site in **`docs/`**, based on the August 2026 CV. GitHub Pages publishes **`master` → `/docs`**. Its homepage presents an overview and recent highlights, with separate Research, Publications, Experience and Contact pages. It includes 16 journal articles with search and filters, a public printable CV, and teaching and academic service.
 
 See [maintenance instructions](docs/MAINTENANCE.md) to edit content and regenerate publications, BibTeX and the CV. The original private Word CV is not included.
 

@@ -12,6 +12,7 @@ from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / 'docs'
+SOURCE = ROOT / 'site-content'
 papers = json.loads((DOCS / 'assets/publications.json').read_text(encoding='utf-8'))
 papers.sort(key=lambda p: (-p['year'], p['id']))
 e = html.escape
@@ -23,10 +24,45 @@ def paper_markup(p):
     return f'''<article class="paper" data-category="{e(p['category'])}" data-selected="{str(p['selected']).lower()}"><span class="paper-year">{p['year']}</span><div><h3><a href="{e(link)}">{e(p['title'])}</a></h3><p>{authors}</p><p class="venue">{e(p['detail'])}</p></div><a class="paper-link" href="{e(link)}" aria-label="{e(label)}: {e(p['title'])}">{label}</a></article>'''
 
 markup = '\n'.join(paper_markup(p) for p in papers)
-index_path = DOCS / 'index.html'
-index = index_path.read_text(encoding='utf-8')
-index = re.sub(r'<!-- PUBLICATIONS_START -->.*?<!-- PUBLICATIONS_END -->', lambda _: '<!-- PUBLICATIONS_START -->\n' + markup + '\n<!-- PUBLICATIONS_END -->', index, flags=re.S)
-index_path.write_text(index, encoding='utf-8')
+def read_content(name):
+    return (SOURCE / (name + '.html')).read_text(encoding='utf-8')
+
+page_info = {
+    'home': ('Home', 'Panwei Du | AI, Structures & Resilient Infrastructure', 'Panwei Du is a Senior Research Fellow at NTU Singapore. Explore his research overview, current focus and recent highlights.'),
+    'research': ('Research', 'Research | Panwei Du', 'Physics-aware AI, structural fire and protective engineering, and sustainable concrete research by Panwei Du.'),
+    'publications': ('Publications', 'Publications | Panwei Du', 'Journal papers and ongoing manuscripts by Panwei Du, with publication search, topic filters and BibTeX downloads.'),
+    'experience': ('Experience', 'Experience & Teaching | Panwei Du', 'Academic appointments, education, teaching, invited talks and academic service of Panwei Du at NTU Singapore.'),
+    'contact': ('Contact', 'Contact | Panwei Du', 'Contact Panwei Du at Nanyang Technological University for research collaboration and academic enquiries.'),
+}
+layout = read_content('layout')
+profiles = read_content('profile-links')
+base_url = 'https://pwdu.github.io/panwei-du.github.io/'
+for page, (label, title, description) in page_info.items():
+    content = read_content(page)
+    if page == 'home': content += read_content('highlights')
+    content = content.replace('{{PUBLICATIONS}}', markup).replace('{{PROFILE_LINKS}}', profiles)
+    if page != 'home':
+        # Give each destination a single top-level heading.
+        content = re.sub(r'<h2>(.*?)</h2>', r'<h1 class="page-title">\1</h1>', content, count=1, flags=re.S)
+        content = re.sub(r'\d{2} / (RESEARCH|PUBLICATIONS|EXPERIENCE|GET IN TOUCH)', r'\1', content)
+    if page == 'publications': content = content.replace('id="publication-list"', 'id="publication-list" data-default-filter="all"')
+    prefix = './' if page == 'home' else '../'
+    def local_link(match):
+        url = match.group(2)
+        if url.startswith(('#', '/', 'http:', 'https:', 'mailto:', 'data:')): return match.group(0)
+        return match.group(1) + prefix + url + '"'
+    content = re.sub(r'((?:href|src)=")([^"]+)"', local_link, content)
+    navigation = ''.join(f'<a href="{prefix if key == "home" else prefix + key + "/"}"' + (' aria-current="page"' if key == page else '') + f'>{item[0]}</a>' for key, item in page_info.items())
+    canonical = base_url + ('' if page == 'home' else page + '/')
+    replacements = {'TITLE': e(title), 'DESCRIPTION': e(description), 'CANONICAL': canonical, 'PREFIX': prefix, 'PAGE': page, 'NAV': navigation, 'CONTENT': content}
+    output = layout
+    for key, value in replacements.items(): output = output.replace('{{' + key + '}}', value)
+    folder = DOCS if page == 'home' else DOCS / page
+    folder.mkdir(exist_ok=True)
+    (folder / 'index.html').write_text(output, encoding='utf-8')
+
+# Build the printable CV from the same editable details as the destination pages.
+index = read_content('experience') + read_content('publications')
 
 bib = []
 for p in papers:
@@ -60,9 +96,8 @@ cv += '''<h2>Awards and recognition</h2><ul><li>Dean’s List with Academic Exce
 (DOCS / 'cv.html').write_text(cv, encoding='utf-8')
 
 # Retain common links from the former Academic Pages site.
-redirects = {'about': 'home', 'publications': 'publications', 'research': 'research', 'cv': None, 'teaching': 'teaching', 'talks': 'teaching', 'contact': 'contact', 'portfolio': 'research'}
-for path, fragment in redirects.items():
-    destination = '../cv.html' if fragment is None else '../#' + fragment
+redirects = {'about': '../', 'cv': '../cv.html', 'teaching': '../experience/#teaching', 'talks': '../experience/#teaching', 'portfolio': '../research/'}
+for path, destination in redirects.items():
     folder = DOCS / path
     folder.mkdir(exist_ok=True)
     (folder / 'index.html').write_text(f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0;url={destination}"><title>Panwei Du</title></head><body><a href="{destination}">Continue to Panwei Du’s website</a></body></html>', encoding='utf-8')
@@ -72,8 +107,9 @@ for legacy in (ROOT / '_publications').glob('*.md'):
     if match:
         folder = DOCS / match.group(1).strip('/')
         folder.mkdir(parents=True, exist_ok=True)
-        (folder / 'index.html').write_text('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=../../#publications"><title>Publications | Panwei Du</title></head><body><a href="../../#publications">View publications</a></body></html>', encoding='utf-8')
+        (folder / 'index.html').write_text('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=../../publications/"><title>Publications | Panwei Du</title></head><body><a href="../../publications/">View publications</a></body></html>', encoding='utf-8')
 
 (DOCS / 'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: https://pwdu.github.io/panwei-du.github.io/sitemap.xml\n', encoding='utf-8')
-(DOCS / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://pwdu.github.io/panwei-du.github.io/</loc></url><url><loc>https://pwdu.github.io/panwei-du.github.io/cv.html</loc></url></urlset>', encoding='utf-8')
-print(f'Built {len(papers)} papers, BibTeX, public CV and legacy redirects in {DOCS}')
+urls = [base_url + ('' if page == 'home' else page + '/') for page in page_info] + [base_url + 'cv.html']
+(DOCS / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join('<url><loc>' + url + '</loc></url>' for url in urls) + '</urlset>', encoding='utf-8')
+print(f'Built {len(page_info)} pages, {len(papers)} papers, BibTeX, public CV and legacy redirects in {DOCS}')

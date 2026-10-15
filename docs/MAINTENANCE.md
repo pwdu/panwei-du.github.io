@@ -2,9 +2,9 @@
 
 The live academic website is the static site in this `docs` directory. The older Jekyll source remains in the repository root for reference and recovery. GitHub Pages should publish `master` → `/docs`.
 
-- Edit biography, research, appointments and teaching in `docs/index.html`.
-- Edit journal articles in `docs/assets/publications.json`. Use the correct publication year and category (`ai`, `fire`, or `materials`). Set `selected` to `true` for homepage highlights. Only add DOI URLs you have verified; otherwise the site provides a title search link.
-- After editing content, run `python scripts/build_academic_site.py` from the repository root. This updates publication HTML, BibTeX, the public CV, sitemap and redirects. No third-party Python packages are required.
+- Edit page content in `site-content/`: `home.html` and `highlights.html` for the homepage, `research.html`, `publications.html`, `experience.html` (including teaching), and `contact.html`. Shared navigation and metadata are in `layout.html`; social icons are in `profile-links.html`. Generated HTML in `docs/` should not be edited directly.
+- Edit journal articles in `docs/assets/publications.json`. Use the correct publication year and category (`ai`, `fire`, or `materials`). Set `selected` to `true` for the Selected filter on the Publications page. Only add DOI URLs you have verified; otherwise the site provides a title search link.
+- After editing content, run `python scripts/build_academic_site.py` from the repository root. This generates all five pages, publication HTML, BibTeX, the public CV, sitemap and redirects. No third-party Python packages are required.
 - Preview with `python -m http.server 8765 --directory docs`, then open `http://localhost:8765`.
 - Commit and push to `master` to publish. No Node, Ruby, database or paid hosting is needed.
 

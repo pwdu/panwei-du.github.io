@@ -1,4 +1,11 @@
 /* No framework or tracking. All research content remains readable without JavaScript. */
+document.documentElement.classList.add('js');
+// Preserve incoming section links from the former single-page homepage.
+if (document.body.dataset.page === 'home') {
+  const destinations = { research: 'research/', publications: 'publications/', experience: 'experience/', teaching: 'experience/#teaching', contact: 'contact/' };
+  const destination = destinations[location.hash.slice(1)];
+  if (destination) location.replace(new URL(destination, location.href.split('#')[0]).href);
+}
 const toggle = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#nav');
 toggle?.addEventListener('click', () => {
@@ -33,7 +40,7 @@ if (mesh) {
 const papers = [...document.querySelectorAll('#publication-list .paper')];
 const filters = [...document.querySelectorAll('[data-filter]')];
 const search = document.querySelector('#publication-search');
-let activeFilter = 'selected';
+let activeFilter = document.querySelector('#publication-list')?.dataset.defaultFilter || 'selected';
 function updatePapers() {
   const query = search.value.toLowerCase().trim();
   let shown = 0;
