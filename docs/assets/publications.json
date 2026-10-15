@@ -1,0 +1,178 @@
+[
+  {
+    "id": 1,
+    "title": "Experimental study and modelling of flexural behaviour of fibre reinforced light-weight aggregate concrete two-way slabs",
+    "authors": "Hang Zhou, Panwei Du§, and Kang Hai Tan§",
+    "year": 2026,
+    "journal": "Journal of Building Engineering",
+    "detail": "Journal of Building Engineering (2026): 116342",
+    "category": "materials",
+    "doi": "",
+    "selected": true
+  },
+  {
+    "id": 2,
+    "title": "Transfer learning enhanced heat transfer neural operators (HTNO) for efficient thermal analysis in concrete structures",
+    "authors": "Panwei Du, Kang Hai Tan§, and Sai Hung Cheung§",
+    "year": 2025,
+    "journal": "Engineering Structures",
+    "detail": "Engineering Structures 329 (2025): 119782",
+    "category": "ai",
+    "doi": "https://doi.org/10.1016/j.engstruct.2025.119782",
+    "selected": true
+  },
+  {
+    "id": 3,
+    "title": "Passive Cooling Paint Enabled by Rational Design of Thermal-Optical and Mass Transfer Properties",
+    "authors": "Jipeng Fei, Xuan Zhang, Di Han, Yue Lei, Fei Xie, Kai Zhou, See-Wee Koh, Junyu Ge, Hao Zhou, Xingli Wang, Xinghui Wu, Jun-Yan Tan, Yuheng Gu, Yongping Long, Koh Zhi Hui, Su Wang, Panwei Du, Tangwei Mi, Bing-Feng Ng, Lili Cai, Chi Feng, Qiaoqiang Gan, and Hong Li",
+    "year": 2025,
+    "journal": "Science",
+    "detail": "Science 388, 6751 (2025): 1044-1049",
+    "category": "materials",
+    "doi": "https://doi.org/10.1126/science.adt3372",
+    "selected": true
+  },
+  {
+    "id": 4,
+    "title": "Buckling behaviour of fibre-reinforced normal and ultra-high-performance concrete-encased CFST composite columns",
+    "authors": "You-Xin Ma, Panwei Du§, and Kang Hai Tan§",
+    "year": 2025,
+    "journal": "Engineering Structures",
+    "detail": "Engineering Structures 345 (2025): 121551",
+    "category": "materials",
+    "doi": "",
+    "selected": false
+  },
+  {
+    "id": 5,
+    "title": "Experimental study of ultra-high-performance fibre-reinforced concrete (UHPFRC)-encased CFST short columns under axial and eccentric compression",
+    "authors": "Panwei Du, You-Xin Ma§, and Kang Hai Tan§",
+    "year": 2024,
+    "journal": "Engineering Structures",
+    "detail": "Engineering Structures 316 (2024): 118452",
+    "category": "materials",
+    "doi": "",
+    "selected": false
+  },
+  {
+    "id": 6,
+    "title": "Structural behaviour of shear-critical fibre-reinforced lightweight aggregate concrete beams exposed to elevated temperatures",
+    "authors": "Christopher Kevinly, Panwei Du§, Bak Koon Teoh, and Kang Hai Tan§",
+    "year": 2025,
+    "journal": "Engineering Structures",
+    "detail": "Engineering Structures 343 (2025): 121059",
+    "category": "fire",
+    "doi": "https://doi.org/10.1016/j.engstruct.2025.121059",
+    "selected": false
+  },
+  {
+    "id": 7,
+    "title": "Shear behaviour of continuous fibre-reinforced lightweight aggregate concrete beams",
+    "authors": "Christopher Kevinly, Panwei Du§, Bak Koon Teoh, and Kang Hai Tan§",
+    "year": 2025,
+    "journal": "Engineering Structures",
+    "detail": "Engineering Structures 323 (2025): 119141",
+    "category": "materials",
+    "doi": "",
+    "selected": false
+  },
+  {
+    "id": 8,
+    "title": "Experimental study and modelling of flexural behaviour of continuous fibre-reinforced lightweight aggregate concrete one-way slab at ambient and elevated temperatures",
+    "authors": "Christopher Kevinly, Panwei Du§, Bak Koon Teoh, and Kang Hai Tan§",
+    "year": 2024,
+    "journal": "Engineering Structures",
+    "detail": "Engineering Structures 307 (2024): 117924",
+    "category": "fire",
+    "doi": "https://doi.org/10.1016/j.engstruct.2024.117924",
+    "selected": false
+  },
+  {
+    "id": 9,
+    "title": "Local bond-slip behaviour of reinforcing bars in fibre reinforced lightweight aggregate concrete at ambient and elevated temperatures",
+    "authors": "Christopher Kevinly, Panwei Du§, and Kang Hai Tan§",
+    "year": 2023,
+    "journal": "Construction and Building Materials",
+    "detail": "Construction and Building Materials 377 (2023): 131010",
+    "category": "fire",
+    "doi": "https://doi.org/10.1016/j.conbuildmat.2023.131010",
+    "selected": false
+  },
+  {
+    "id": 10,
+    "title": "Synergistic effects of web reinforcement and hybrid fibres on shear performance of continuous deep beams with unsymmetrical web openings",
+    "authors": "Shengxin Fan, Panwei Du§, and Kang Hai Tan§",
+    "year": 2024,
+    "journal": "Engineering Structures",
+    "detail": "Engineering Structures 300 (2024): 117129",
+    "category": "materials",
+    "doi": "",
+    "selected": false
+  },
+  {
+    "id": 11,
+    "title": "Experimental and analytical studies on residual flexural behaviour of reinforced alkali-activated slag-based concrete beams after exposure to fire",
+    "authors": "Yuzhong Liu, Panwei Du, Kang Hai Tan§, Yunxing Du, Jie Su, and Caijun Shi§",
+    "year": 2024,
+    "journal": "Engineering Structures",
+    "detail": "Engineering Structures 298 (2024): 117035",
+    "category": "fire",
+    "doi": "",
+    "selected": false
+  },
+  {
+    "id": 12,
+    "title": "Effects of Biaxial Bending and Axial Restraint on Hybrid Fiber Reinforced High-Performance Concrete Columns at Elevated Temperatures",
+    "authors": "Panwei Du, Yaowen Yang, and Kang Hai Tan§",
+    "year": 2022,
+    "journal": "Journal of Structural Engineering",
+    "detail": "Journal of Structural Engineering 148, no. 11 (2022): 04022185",
+    "category": "fire",
+    "doi": "",
+    "selected": true
+  },
+  {
+    "id": 13,
+    "title": "Fire behaviour and design of hybrid fibre reinforced high-performance concrete columns subjected to uniaxial bending",
+    "authors": "Panwei Du, Yaowen Yang, and Kang Hai Tan§",
+    "year": 2022,
+    "journal": "Engineering Structures",
+    "detail": "Engineering Structures 251 (2022): 113425",
+    "category": "fire",
+    "doi": "https://doi.org/10.1016/j.engstruct.2021.113425",
+    "selected": false
+  },
+  {
+    "id": 14,
+    "title": "Analytical modelling of high strength concrete columns under ambient and fire conditions",
+    "authors": "Panwei Du, Yaowen Yang, and Kang Hai Tan§",
+    "year": 2021,
+    "journal": "Engineering Structures",
+    "detail": "Engineering Structures 247 (2021): 113216",
+    "category": "fire",
+    "doi": "https://doi.org/10.1016/j.engstruct.2021.113216",
+    "selected": false
+  },
+  {
+    "id": 15,
+    "title": "Fire resistance of ultra-high performance concrete columns subjected to axial and eccentric loading",
+    "authors": "Ye Li, Panwei Du§, and Kang Hai Tan§",
+    "year": 2021,
+    "journal": "Engineering Structures",
+    "detail": "Engineering Structures 248 (2021): 113158",
+    "category": "fire",
+    "doi": "https://doi.org/10.1016/j.engstruct.2021.113158",
+    "selected": false
+  },
+  {
+    "id": 16,
+    "title": "Simplified method for analysis of circular steel tubed-reinforced-concrete columns under eccentric compression",
+    "authors": "Panwei Du, Dan Gan§, Yaowen Yang, and Kang Hai Tan§",
+    "year": 2019,
+    "journal": "Engineering Structures",
+    "detail": "Engineering Structures 198 (2019): 109524",
+    "category": "materials",
+    "doi": "https://doi.org/10.1016/j.engstruct.2019.109524",
+    "selected": false
+  }
+]
