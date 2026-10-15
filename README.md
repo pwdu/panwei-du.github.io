@@ -1,3 +1,26 @@
+# Panwei Du — Academic Website
+
+Live website: [pwdu.github.io/panwei-du.github.io](https://pwdu.github.io/panwei-du.github.io/)
+
+The current website is a responsive static site in **`docs/`**, based on the August 2026 CV. GitHub Pages publishes **`master` → `/docs`**. It includes research, 16 journal articles with search and filters, a public printable CV, experience, teaching and contact details.
+
+See [maintenance instructions](docs/MAINTENANCE.md) to edit content and regenerate publications, BibTeX and the CV. The original private Word CV is not included.
+
+Quick local preview:
+
+```sh
+python scripts/build_academic_site.py
+python -m http.server 8765 --directory docs
+```
+
+Open `http://localhost:8765`. No framework, Ruby installation, database or paid hosting is required.
+
+The previous Academic Pages source is retained below and in the repository root for reference. It is not the active website.
+
+---
+
+## Legacy template documentation
+
 # Academic Pages
 **Academic Pages is a GitHub Pages template for personal and professional portfolio-oriented websites.**
 
